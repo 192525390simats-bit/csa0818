@@ -1,0 +1,8 @@
+c=int(input('enter the celsius value'))
+f=(c*(5/9))+32
+print(f)
+
+
+f=int(input('enter the value is fahrenheit value '))
+c=(f-32)*(9/5)
+print(c)
