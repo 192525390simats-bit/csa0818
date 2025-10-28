@@ -1,0 +1,11 @@
+def calucation():
+ a=int(input('enter the value of a'))
+ s=a*a
+ return s
+s=calucation()
+print(s)
+
+
+output
+enter the value of a3
+9
