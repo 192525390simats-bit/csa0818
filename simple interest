@@ -1,0 +1,11 @@
+p=int(input('principle value'))
+r=int(input('rate'))
+t=int(input('time period'))
+sp=(p*r*t)/100
+print('simple',sp)
+
+output:
+principle value10000
+rate5
+time period5
+simple 2500.0
