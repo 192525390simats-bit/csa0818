@@ -1,0 +1,11 @@
+def area(r):
+  a=3.14*r*r
+  return a
+r=int(input('enter the radius'))
+a=area(r)
+print(a) 
+
+
+output
+enter the radius3
+28.259999999999998
