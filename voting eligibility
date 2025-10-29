@@ -1,0 +1,14 @@
+a=int(input('enter your age'))
+if a>=18:
+    print('eligible for voting')
+else:
+    print('not eligible for voting')
+
+
+output
+enter your age13
+not eligible for voting
+
+============================================== RESTART: C:/Users/SAIL/AppData/Local/Programs/Python/Python311/123.py ==============================================
+enter your age33
+eligible for voting
