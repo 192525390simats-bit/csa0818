@@ -1,0 +1,20 @@
+n=int(input('enter the number'))
+if n>0:
+    print('number is postive')
+elif n<0:
+    print('number is negative')
+else:
+    print('number is 0')
+
+
+output
+enter the number0
+number is 0
+
+============================================== RESTART: C:/Users/SAIL/AppData/Local/Programs/Python/Python311/123.py ==============================================
+enter the number36
+number is postive
+
+============================================== RESTART: C:/Users/SAIL/AppData/Local/Programs/Python/Python311/123.py ==============================================
+enter the number-567
+number is negative
