@@ -1,0 +1,12 @@
+r=int(input('enter the no. of rows'))
+for  i in range(1,r+1):
+    print('*'*i)
+
+
+output:
+enter the no. of rows5
+*
+**
+***
+****
+*****
