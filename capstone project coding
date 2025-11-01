@@ -1,0 +1,106 @@
+college admission registration
+
+import csv
+
+FILENAME = "admission_data.csv"
+
+def register_student():
+    print("\n--- Register Student ---")
+    name = input("Enter Student Name: ")
+    age = int(input("Enter Age: "))
+    course = input("Enter Course Applied For: ")
+    marks = float(input("Enter Percentage Marks: "))
+
+    status = "Eligible" if marks >= 60 else "Not Eligible"
+
+    with open(FILENAME, "a", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow([name, age, course, marks, status])
+
+    print(f"Student {name} registered successfully with status: {status}")
+
+def view_students():
+    print("\n--- Registered Students ---")
+    try:
+        with open(FILENAME, "r") as file:
+            reader = csv.reader(file)
+            for row in reader:
+                print(row)
+    except FileNotFoundError:
+        print("No data found. Please register students first.")
+
+def search_student():
+    name = input("\nEnter student name to search: ")
+    found = False
+    try:
+        with open(FILENAME, "r") as file:
+            reader = csv.reader(file)
+            for row in reader:
+                if row and row[0].lower() == name.lower():
+                    print("Student Found:", row)
+                    found = True
+                    break
+    except FileNotFoundError:
+        print("File not found.")
+
+    if not found:
+        print("Student not found.")
+
+def main():
+    print("=== College Admission Management System ===")
+    while True:
+        print("\n1. Register Student")
+        print("2. View All Students")
+        print("3. Search Student")
+        print("4. Exit")
+
+        choice = input("Enter choice: ")
+
+        if choice == "1":
+            register_student()
+        elif choice == "2":
+            view_students()
+        elif choice == "3":
+            search_student()
+        elif choice == "4":
+            print("Exiting program. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Try again.")
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
+
+
+
+
+output 
+--- Register Student ---
+Enter Student Name: aswatha v
+Enter Age: 18
+Enter Course Applied For: aiml
+Enter Percentage Marks: 85
+Student aswatha v registered successfully with status: Eligible
+
+1. Register Student
+2. View All Students
+3. Search Student
+4. Exit
+Enter choice: 2
+
+--- Registered Students ---
+['aswatha v', '18', 'aiml', '85.0', 'Eligible']
+
+1. Register Student
+2. View All Students
+3. Search Student
+4. Exit
+Enter choice: 3
+
+Enter student name to search: 
