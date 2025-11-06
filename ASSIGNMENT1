@@ -1,0 +1,219 @@
+1.Write a Python program that takes two integer arrays and returns their intersection (the common elements between both arrays).
+arr1 = [1, 2, 3, 4, 5]
+arr2 = [4, 5, 6, 7, 8]
+
+intersection = list(set(arr1) & set(arr2))
+
+print("Intersection of two arrays:", intersection)
+
+OUTPUT:
+Intersection of two arrays: [4, 5]
+
+
+
+2.Question:
+Write an efficient algorithm in Python that searches for a target value in an M×N matrix. The matrix has the following properties:
+Integers in each row are sorted in ascending order.
+The first integer of each row is greater than the last integer of the previous row.
+Return True if the target is found, otherwise return False.
+
+ANSWER:
+matrix = [
+[1, 3, 5, 7],
+[10, 11, 16, 20],
+[23, 30, 34, 50]
+]
+
+target = int(input("Enter target: "))
+
+found = any(target in row for row in matrix)
+print(True)
+
+output:
+Enter target: 20
+True
+
+
+
+3.Write a Python program to check whether a given number n is a perfect square or not.
+Print "Perfect Square" if it is, otherwise print "Not a Perfect Square".
+
+answer:
+n = int(input("Enter a number: "))
+
+if int(n ** 0.5) ** 2 == n:
+print("Perfect Square")
+else:
+print("Not a Perfect Square")
+
+output:
+Enter a number: 36
+Perfect Square
+
+
+
+4.Write a Python program to check whether a given number n is a Lucky Number or not.
+A number is called Lucky if the sum of its digits is 1 after repeatedly summing the digits.
+
+n = int(input("Enter a number: "))
+
+def is_lucky(num):
+while num > 9:
+s = 0
+while num > 0:
+s += num % 10
+num //= 10
+num = s
+return num == 1
+
+if is_lucky(n):
+print("Lucky Number")
+else:
+print("Not a Lucky Number")
+
+output:
+Enter a number: 19
+Lucky Number
+
+
+5.REPEATED
+
+nums = [3, 1, 3, 4, 2]
+
+for i in nums:
+    if nums.count(i) > 1:
+        print("Repeated number is:", i)
+        break
+OUTPUT:
+Repeated number is: 3
+
+
+6.3D MATRIX:
+
+x=[[1,1,1],
+  [2,2,2],
+  [3,3,3]]
+y=[[1,1,1],
+  [2,2,2],
+  [3,3,3]]
+z=[[1,1,1],
+   [2,2,2],
+   [3,3,3]]
+r=[[0,0,0],
+       [0,0,0],
+       [0,0,0]]
+
+for i in range(len(x)):
+  
+  for j in range(len(y[0])):
+    for k in range(len(y)):
+      
+     r[i][j]=r[i][j]+(x[i][k]*y[k][j])
+f=[[0,0,0],
+  [0,0,0],
+  [0,0,0]]
+for i in range (len(r)):
+  for j in range (len(z[0])):
+    for k in range(len(z)):
+      f[i][j]=f[i][j]+(r[i][k]*z[k][j])
+print(f)
+OUTPUT:
+[[36, 36, 36], [72, 72, 72], [108, 108, 108]]
+
+
+
+7.2D MATRIX:
+
+a=[[1,2],
+  [5,3]]
+b=[[2,3],
+  [4,1]]
+c=[[0,0],
+  [0,0]]
+for i in range(len(a)):
+   for j in range(len(a[0])):
+     for k in range(len(b)):
+       c[i][j]+=a[i][k]*b[k][j]
+for r in c:
+  print(r)
+OUTPUT:
+[10, 5]
+[22, 18] 
+
+8.python programm to find the frequency of each element present in the array and display the highest frequency and respective element in the list
+arr = [1, 2, 2, 3, 1, 2, 4, 1, 1]
+freq = {}
+
+for num in arr:
+    if num in freq:
+        freq[num] += 1
+    else:
+        freq[num] = 1
+
+
+max_num = max(freq, key=freq.get)
+
+print("Frequencies:", freq)
+print(f"Element with highest frequency: {max_num} → {freq[max_num]}")
+
+OUTPUT:
+Frequencies: {1: 4, 2: 3, 3: 1, 4: 1}
+Element with highest frequency: 1 → 4
+
+
+9.You are climbing a staircase. It takes n steps to reach the top.
+Each time, you can either climb 1 step or 2 steps.
+Write a Python program to find how many distinct ways you can climb to the top.
+
+def climb_stairs(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    else:
+        a, b = 1, 2
+        for i in range(3, n + 1):
+            a, b = b, a + b
+        return b
+
+n = int(input("Enter number of steps: "))
+print("Number of ways to climb:", climb_stairs(n))
+
+OUTPUT
+Enter number of steps: 5
+Number of ways to climb: 8
+
+
+10.Write a Python program to find the union of two lists.
+list1 = [1, 2, 3, 4]
+list2 = [3, 4, 5, 6]
+
+union_list = list1 + [x for x in list2 if x not in list1]
+
+print("Union of two lists:", union_list)
+
+OUTPUT:
+Union of two lists: [1, 2, 3, 4, 5, 6]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
